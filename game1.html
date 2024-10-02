@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoNavigator: The World Challenge</title>
+    <!-- CesiumJS CSS -->
+    <link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Widgets/widgets.css" />
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #info {
+             padding: 10px;
+	     color:white;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    border-radius: 10px; /* Add rounded corners */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    font-family: Arial, sans-serif; /* Optional: Set a cleaner font */
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+		}
+	p, h2, {
+	    color:white;
+	
+        }
+    </style>
+</head>
+<body>
+
+<div id="info">
+    <h2>Welcome to the game</h2>
+    <p>Guess the location on the globe! Click anywhere on the globe to make a guess.</p>
+    <p>It will show a line from Washington DC, USA to the country you guessed.</p>
+    <p>You have 6 tries to guess the country. Take help of a Hint if you can't guess it!</p>
+    <div id="distance">Distance: </div>
+    <div id="hint">Hint: </div>
+    <button id="reset">Reset Game</button>
+    <button id="getHint">Get Hint</button>
+</div>
+
+<!-- The globe container -->
+<div id="cesiumContainer"></div>
+
+<!-- CesiumJS Library -->
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.104/Build/Cesium/Cesium.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
